@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Link to external CSS file -->
+  <link rel="stylesheet" href="styles.css">
   <title>My Game Hub</title>
+</head>
   <style>
     /* General body styling */
     body {
@@ -11,7 +14,7 @@
       background: linear-gradient(135deg, #2a2a2a, #141414);
       color: #fff;
       text-align: center;
-      padding: 50px 20px;
+      padding: 20px 20px;
       margin: 0;
     }
 
@@ -34,9 +37,9 @@
     /* Game links styled as buttons */
     .game-list a {
       display: inline-block;
-      padding: 15px 25px;
+      padding: 10px 20px;
       font-size: 1.2rem;
-      background-color: #00a3c7;
+      background-color: #2560df;
       color: white;
       text-decoration: none;
       border-radius: 8px;
@@ -46,9 +49,9 @@
 
     /* Hover effect for game links */
     .game-list a:hover {
-      background-color: #0084a1;
+      background-color: #426cc7;
       transform: translateY(-5px);
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.411);
     }
 
     /* Responsive design adjustments */
@@ -67,10 +70,15 @@
 <body>
   <h1>Welcome to My Game Hub</h1>
   <div class="game-list">
-    <a href="Games/slope.html">Play Slope (May be blocked. Working on html)</a>
-    <a href="Games/Eaglercraft_1.12.2_WASM_Offline_Download.html">Play 1.12 (FAST)</a>
-    <a href="Games/Main (1)/index.html">Play Cookie Clicker (this can take a while to load)</a>
-    <a href="2048.html">Play 2048</a>
+    <p>EaglerCraft Files </p>
+      <a href="Games/Eaglercraft_1.12.2_WASM_Offline_Download.html">Play 1.12 (FAST)</a>
+      <a href="Games/EaglercraftX_1.8_WASM-GC_Offline_Download.html"> Play 1.8.8 (FAST)</a>
+      <a href="Games/EaglercraftX_1.8_u50_Offline_Signed.html"> Play 1.8.8 (JS)</a>
+      <a href="Games/Eaglercraft_1.12_Offline_en_US.html"> Play 1.12 (JS)</a>
+    <p>General Games</p> 
+      <a href="Games/slope.html">Play Slope (May be blocked. Working on html)</a>
+      <a href="Games/Main (1)/index.html">Play Cookie Clicker (this can take a while to load)</a>
+      <a href="2048.html">Play 2048</a>
   </div>
 </body>
 </html>
