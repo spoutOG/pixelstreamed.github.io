@@ -2,7 +2,11 @@
     text-align: left;
   }
   body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    .poppins-regular {
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }    
     background: linear-gradient(135deg, #2a2a2a, #141414);
     color: #fff;
     text-align: center;
