@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <p class="left-aligned"></p>
   <!-- Link to external CSS file -->
   <link rel="stylesheet" href="styles.css">
   <title>My Game Hub</title>
@@ -26,8 +26,10 @@
       margin-bottom: 40px;
       text-transform: uppercase;
     }
-
-    /* Container for the game list */
+    .left-aligned {
+      text-align: left;
+    }
+      /* Container for the game list */
     .game-list {
       display: flex;
       flex-direction: column;
@@ -102,11 +104,10 @@
     }
   </style>
 </head>
-<p class="left-aligned"></p>
 <body>
   <h1>Welcome to My Game Hub</h1>
-  <div class="game-list"></div>
-  <div class="left-aligned"></div>
+  <div class="game-list">
+  <div class="left-aligned">
     <p>EaglerCraft Files</p>
     <a href="Games/Eaglercraft_1.12.2_WASM_Offline_Download.html">Play 1.12 (FAST)</a>
     <a href="Games/EaglercraftX_1.8_WASM-GC_Offline_Download.html">Play 1.8.8 (FAST)</a>
