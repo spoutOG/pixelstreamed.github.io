@@ -5,145 +5,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Game Hub</title>
   <link rel="stylesheet" href="styles.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #2a2a2a, #141414);
-      color: #fff;
-      text-align: center;
-      margin: 0;
-      padding: 40px 20px;
-      transition: background 0.4s, color 0.4s;
-    }
-
-    body.light-mode {
-      background: linear-gradient(135deg, #f0f0f0, #ffffff);
-      color: #000;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: inherit;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-      margin-bottom: 40px;
-      text-transform: uppercase;
-    }
-
-    .game-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .game-list p {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: inherit;
-      text-transform: uppercase;
-      margin: 0;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #2560df;
-    }
-
-    .game-list a {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 1.2rem;
-      background-color: #2560df;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      text-align: center;
-      width: 250px;
-      margin: 5px 0;
-    }
-
-    .game-list a:hover {
-      background-color: #426cc7;
-      transform: translateY(-5px);
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      h2 {
-        font-size: 2.5rem;
-        color: #e2e2e2;
-      }
-      .game-list a {
-        font-size: 1rem;
-        padding: 12px 20px;
-        width: auto;
-      }
-    }
-
-    .game-list a {
-      animation: fadeIn 0.6s ease-out;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Toggle button */
-    .mode-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #2560df;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      transition: background 0.3s;
-    }
-
-    .mode-toggle:hover {
-      background: #426cc7;
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
   <button class="mode-toggle" onclick="toggleMode()">Light/Dark Mode</button>
 
-  <h1>Welcome to My Games Hub!</h1>
-  <div class="game-list">
-    <div class="left-aligned">
-      <h2>What games do we aim to add?</h2>
-      <h3>-Coming Soon-</h3>
-      <p>EaglerCraft Files</p>
-      <a href="Games/Eaglercraft_1.12.2_WASM_Offline_Download.html">Play 1.12 (FAST)</a>
-      <a href="Games/EaglercraftX_1.8_WASM-GC_Offline_Download.html">Play 1.8.8 (FAST)</a>
-      <a href="Games/EaglercraftX_1.8_u50_Offline_Signed.html">Play 1.8.8 (JS)</a>
-      <a href="Games/Eaglercraft_1.12_Offline_en_US.html">Play 1.12 (JS)</a>
+  <main>
+    <header>
+      <h1>Welcome to My Game Hub!</h1>
+    </header>
 
-      <p>General Games</p>
-      <a href="Games/Slope Blue/Slope.html">Play Slope (May be blocked. Working on HTML)</a>
-      <a href="Games/Main (1)/index.html">Play Cookie Clicker (this can take a while to load)</a>
-      <p>Helpful</p>
-      <a href="Ruffle/Ruffle.html">Flash Player (Slow)</a>
-    </div>
-  </div>
+    <section class="game-list left-aligned">
+      <h2>What Games Are Coming Soon?</h2>
+      <h3>- Coming Soon -</h3>
+
+      <section>
+        <p>EaglerCraft Files</p>
+        <a href="Games/Eaglercraft_1.12.2_WASM_Offline_Download.html">Play 1.12 (FAST)</a>
+        <a href="Games/EaglercraftX_1.8_WASM-GC_Offline_Download.html">Play 1.8.8 (FAST)</a>
+        <a href="Games/EaglercraftX_1.8_u50_Offline_Signed.html">Play 1.8.8 (JS)</a>
+        <a href="Games/Eaglercraft_1.12_Offline_en_US.html">Play 1.12 (JS)</a>
+      </section>
+
+      <section>
+        <p>General Games</p>
+        <a href="Games/Slope Blue/Slope.html">Play Slope (May be blocked)</a>
+        <a href="Games/Main (1)/index.html">Play Cookie Clicker</a>
+      </section>
+
+      <section>
+        <p>Helpful</p>
+        <a href="Ruffle/Ruffle.html">Flash Player (Slow)</a>
+      </section>
+    </section>
+  </main>
 
   <script>
-    // Load saved mode preference
+    // Apply saved theme preference on load
     if (localStorage.getItem('theme') === 'light') {
       document.body.classList.add('light-mode');
     }
