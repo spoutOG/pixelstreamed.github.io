@@ -5,29 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Game Hub</title>
   <style>
+    /* General body styling */
     body {
-      font-family: Arial, sans-serif;
-      background-color: #000000;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2a2a2a, #141414);
+      color: #fff;
       text-align: center;
-      padding: 50px;
+      padding: 50px 20px;
+      margin: 0;
     }
 
+    /* Header styling */
     h1 {
-      color: #ffffff;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+      margin-bottom: 30px;
     }
 
+    /* Game list container */
+    .game-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+
+    /* Game links styled as buttons */
     .game-list a {
-      display: block;
-      margin: 15px auto;
-      font-size: 20px;
-      color: rgb(0, 156, 196);
+      display: inline-block;
+      padding: 15px 25px;
+      font-size: 1.2rem;
+      background-color: #00a3c7;
+      color: white;
       text-decoration: none;
-      width: fit-content;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
     }
 
+    /* Hover effect for game links */
     .game-list a:hover {
-      color: rgb(0, 132, 255);
-      text-decoration: bold;
+      background-color: #0084a1;
+      transform: translateY(-5px);
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Responsive design adjustments */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .game-list a {
+        font-size: 1rem;
+        padding: 12px 20px;
+      }
     }
   </style>
 </head>
