@@ -4,128 +4,65 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Game Hub</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #2a2a2a, #141414);
-      color: #fff;
-      text-align: center;
-      margin: 0;
-      padding: 40px 20px;
-      transition: background 0.4s, color 0.4s;
-    }
-
-    body.light-mode {
-      background: linear-gradient(135deg, #f0f0f0, #ffffff);
-      color: #000;
-    }
-
-    h1 {
-      font-size: 3rem;
-      color: inherit;
-      text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
-      margin-bottom: 40px;
-    }
-
-    .game-list {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .game-list p {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: inherit;
-      text-transform: uppercase;
-      margin: 0;
-      padding-bottom: 10px;
-      border-bottom: 2px solid #2560df;
-    }
-
-    .game-list a {
-      display: inline-block;
-      padding: 12px 24px;
-      font-size: 1.2rem;
-      background-color: #5c87e3;
-      color: white;
-      text-decoration: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      text-align: center;
-      width: 250px;
-      margin: 5px 0;
-    }
-
-    .game-list a:hover {
-      background-color: #426cc7;
-      transform: translateY(-5px);
-      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
-    }
-
-    @media (max-width: 768px) {
-      h1 {
-        font-size: 2.5rem;
+      body {
+    background-color: #000; /* Solid black background */
+    color: #fff; /* Ensure text is visible on black */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+    text-align: center;
       }
-      h2 {
-        font-size: 2.5rem;
-        color: #e2e2e2;
-      }
-      .game-list a {
-        font-size: 1rem;
-        padding: 12px 20px;
-        width: auto;
-      }
-    }
-
-
-    /* Toggle button */
-    .mode-toggle {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #2560df;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      font-size: 1rem;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-      transition: background 0.3s;
-    }
-
-    .mode-toggle:hover {
-      background: #1d5fee;
-    }
   </style>
 </head>
 <body>
+
+  <!-- Icon-based Theme Toggle Button -->
+  <button class="mode-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
 
   <h1>Welcome to My Games Hub!</h1>
   <div class="game-list">
     <div class="left-aligned">
       <h2>What games do we aim to add/do?</h2>
-      <h3 style="color:rgb(126, 126, 126);">Adding/Fixing slope,
-       "Gams" from City Realm and Upgrading the CSS/HTML files.
-      </h3>
+      <h3>Adding/Fixing Slope, "Gams" from City Realm and upgrading the CSS/HTML files. We also broke light mode 😬</h3>
+
       <p>EaglerCraft Files</p>
       <a href="Games/Eaglercraft_1.12.2_WASM_Offline_Download.html">Play 1.12 <b>WebAssembly</b></a>
       <a href="Games/EaglercraftX_1.8_WASM-GC_Offline_Download.html">Play 1.8.8 <b>WebAssembly</b></a>
       <a href="Games/EaglercraftX_1.8_u50_Offline_Signed.html">Play 1.8.8 <b>JavaScript</b></a>
       <a href="Games/Eaglercraft_1.12_Offline_en_US.html">Play 1.12 <b>JS</b></a>
-      <a href="Games/Eaglercraft_Beta_1.3_Offline_Download.html"> Play <b>Beta</b> 1.3</a>
+      <a href="Games/Eaglercraft_Beta_1.3_Offline_Download.html">Play <b>Beta</b> 1.3</a>
       <a href="Games/Indev.html">Play Indev</a>
+
       <p>General Games</p>
       <a href="Games/qui.html">Play Slope <b>(Working on HTML)</b></a>
       <a href="Games/Main (1)/index.html">Play Cookie Clicker (this can take a while to load)</a>
-      <a href="Games/1.4.4b/index.html"> <b>OvO Game</b></a>
+      <a href="Games/1.4.4b/index.html"><b>OvO Game</b></a>
+
       <p>Helpful Games</p>
       <a href="Ruffle/Ruffle.html">Flash Player <b>(Slow)</b></a>
     </div>
   </div>
+
+  <script>
+    const toggleButton = document.getElementById('themeToggle');
+    const body = document.body;
+
+    // Load theme from localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-mode');
+      toggleButton.textContent = '🌞';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      const isLight = body.classList.contains('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      toggleButton.textContent = isLight ? '🌞' : '🌙';
+    });
+  </script>
+
+</body>
+</html>

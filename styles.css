@@ -1,202 +1,218 @@
 /* Reset & Base Styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Animated Background - Dark Mode */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-size: 600% 600%;
+  color: #fff;
+  padding: 40px 20px;
+  transition: background 0.6s ease, color 0.6s ease;
+  animation: fadeInBody 1s ease forwards;
+  opacity: 0;
+  text-align: center;
+}
+
+/* Animated Background - Light Mode */
+body.light-mode {
+  background: linear-gradient(270deg, #e0f7fa, #ffffff, #dfe9f3);
+  background-size: 600% 600%;
+  animation: gradientBG 15s ease infinite;
+}
+
+/* Keyframes for animated background */
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  body {
-    background: linear-gradient(135deg, #2a2a2a, #141414);
-    color: #fff;
-    text-alignn: center;
-    padding: 40px 20px;
-    transition: background 0.6s ease, color 0.6s ease;
-    animation: fadeInBody 1s ease forwards;
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Typography */
+h1 {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.6);
+  animation: slideFadeIn 1s ease forwards;
+  opacity: 0;
+}
+
+h2, h3 {
+  margin-bottom: 10px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+  color: #aaa;
+}
+
+/* Game List Layout */
+.game-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.left-aligned {
+  text-align: left;
+  opacity: 0;
+  animation: fadeInUp 1.2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+/* Section Headings */
+.game-list p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: inherit;
+  text-transform: uppercase;
+  margin: 30px 0 10px;
+  border-bottom: 2px solid #2560df;
+  padding-bottom: 8px;
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+/* Game Buttons */
+.game-list a {
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  background-color: #2560df;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  text-align: center;
+  width: 250px;
+  margin: 6px 0;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.game-list a:nth-child(n+2) { animation-delay: 0.2s; }
+.game-list a:nth-child(n+3) { animation-delay: 0.4s; }
+.game-list a:nth-child(n+4) { animation-delay: 0.6s; }
+
+.game-list a:hover {
+  background-color: #426cc7;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* Toggle Button */
+.mode-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #2560df;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 100;
+}
+
+.mode-toggle:hover {
+  background: #0044d6c2;
+  transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeInBody {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFadeIn {
+  from {
     opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  /* Light Theme */
-  body.light-mode {
-    background: linear-gradient(135deg, #f0f0f0, #ffffff);
-    color: #000;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Typography */
-  h1 {
-    font-size: 3rem;
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-    animation: slideFadeIn 1s ease forwards;
-    opacity: 0;
-  }
-  
-  h2, h3 {
-    margin-bottom: 10px;
-    animation: fadeInUp 1s ease forwards;
-    opacity: 0;
-  }
-  
-  h2 {
-    font-size: 2rem;
-  }
-  
-  h3 {
-    font-size: 1.2rem;
-    color: #aaa;
-  }
-  
-  /* Game List Layout */
-  .game-list {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .left-aligned {
-    text-align: left;
-    opacity: 0;
-    animation: fadeInUp 1.2s ease forwards;
-    animation-delay: 0.5s;
-  }
-  
-  /* Section Headings */
-  .game-list p {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: inherit;
-    text-transform: uppercase;
-    margin: 30px 0 10px;
-    border-bottom: 2px solid #2560df;
-    padding-bottom: 8px;
-    animation: fadeInUp 1s ease forwards;
-    opacity: 0;
-  }
-  
-  /* Game Buttons */
-  .game-list a {
-    display: inline-block;
-    padding: 12px 24px;
-    font-size: 1.1rem;
-    background-color: #2560df;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
-    text-align: center;
-    width: 250px;
-    margin: 6px 0;
+}
+
+@keyframes fadeInUp {
+  from {
     opacity: 0;
     transform: translateY(10px);
-    animation: fadeInUp 0.6s ease forwards;
   }
-  
-  .game-list a:nth-child(n+2) { animation-delay: 0.2s; }
-  .game-list a:nth-child(n+3) { animation-delay: 0.4s; }
-  .game-list a:nth-child(n+4) { animation-delay: 0.6s; }
-  
-  .game-list a:hover {
-    background-color: #426cc7;
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  /* Toggle Button */
-  .mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: #2560df;
-    color: white;
-    border: none;
-    padding: 10px 16px;
-    border-radius: 8px;
-    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .game-list a {
     font-size: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-    transition: background 0.3s, transform 0.3s;
-    z-index: 100;
+    padding: 12px 20px;
+    width: auto;
   }
-  
-  .mode-toggle:hover {
-    background: #426cc7;
-    transform: scale(1.05);
-  }
-  
-  /* Animations */
-  @keyframes fadeInBody {
-    to {
-      opacity: 1;
+}
+    /* Theme toggle icon button */
+    .mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.3s;
     }
-  }
-  
-  @keyframes slideFadeIn {
-    from {
+
+    .mode-toggle:hover {
+      transform: scale(1.2);
+    }
+
+    /* Game list entrance animation */
+    .game-list {
+      animation: fadeInUp 1.2s ease forwards;
       opacity: 0;
-      transform: translateY(-20px);
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-  }
-  
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    h1 {
-      font-size: 2.5rem;
-    }
-  
-    .game-list a {
-      font-size: 1rem;
-      padding: 12px 20px;
-      width: auto;
-    }
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
-    background-size: 600% 600%;
-    animation: gradientBG 15s ease infinite;
-    color: #fff;
-    text-align: center;
-    margin: 0;
-    padding: 40px 20px;
-    transition: background 0.4s, color 0.4s;
-  }
-  
-  body{
-    background: linear-gradient(270deg, #e0f7fa, #ffffff, #dfe9f3);
-    background-size: 600% 600%;
-    animation: gradientBG 15s ease infinite;
-    color: #000;
-  }
-  
-  /* Keyframes for animated background */
-  @keyframes gradientBG {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-  
