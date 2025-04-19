@@ -8,7 +8,7 @@
   body {
     background: linear-gradient(135deg, #2a2a2a, #141414);
     color: #fff;
-    text-align: center;
+    text-alignn: center;
     padding: 40px 20px;
     transition: background 0.6s ease, color 0.6s ease;
     animation: fadeInBody 1s ease forwards;
@@ -166,6 +166,37 @@
       font-size: 1rem;
       padding: 12px 20px;
       width: auto;
+    }
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(270deg, #0f2027, #203a43, #2c5364);
+    background-size: 600% 600%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    padding: 40px 20px;
+    transition: background 0.4s, color 0.4s;
+  }
+  
+  body{
+    background: linear-gradient(270deg, #e0f7fa, #ffffff, #dfe9f3);
+    background-size: 600% 600%;
+    animation: gradientBG 15s ease infinite;
+    color: #000;
+  }
+  
+  /* Keyframes for animated background */
+  @keyframes gradientBG {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
     }
   }
   

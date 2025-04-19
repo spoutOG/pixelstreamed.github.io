@@ -18,7 +18,7 @@
 
     body.light-mode {
       background: linear-gradient(135deg, #f0f0f0, #ffffff);
-      color: #353535;
+      color: #000;
     }
 
     h1 {
@@ -27,7 +27,6 @@
       text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.6);
       margin-bottom: 40px;
     }
-    
 
     .game-list {
       display: flex;
@@ -107,7 +106,6 @@
   </style>
 </head>
 <body>
-  <button class="mode-toggle" onclick="toggleMode()">Light/Dark Mode</button>
 
   <h1>Welcome to My Games Hub!</h1>
   <div class="game-list">
@@ -121,27 +119,13 @@
       <a href="Games/EaglercraftX_1.8_WASM-GC_Offline_Download.html">Play 1.8.8 <b>WebAssembly</b></a>
       <a href="Games/EaglercraftX_1.8_u50_Offline_Signed.html">Play 1.8.8 <b>JavaScript</b></a>
       <a href="Games/Eaglercraft_1.12_Offline_en_US.html">Play 1.12 <b>JS</b></a>
+      <a href="Games/Eaglercraft_Beta_1.3_Offline_Download.html"> Play <b>Beta</b> 1.3</a>
       <a href="Games/Indev.html">Play Indev</a>
       <p>General Games</p>
-      <a href="Games/qui.html">Play Slope</a>
+      <a href="Games/qui.html">Play Slope <b>(Working on HTML)</b></a>
       <a href="Games/Main (1)/index.html">Play Cookie Clicker (this can take a while to load)</a>
       <a href="Games/1.4.4b/index.html"> <b>OvO Game</b></a>
       <p>Helpful Games</p>
       <a href="Ruffle/Ruffle.html">Flash Player <b>(Slow)</b></a>
     </div>
   </div>
-
-  <script>
-    // Load saved mode preference
-    if (localStorage.getItem('theme') === 'light') {
-      document.body.classList.add('light-mode');
-    }
-
-    function toggleMode() {
-      document.body.classList.toggle('light-mode');
-      const isLight = document.body.classList.contains('light-mode');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-    }
-  </script>
-</body>
-</html>
