@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Games - Helpful </title>
+  <title>Games</title>
   <link rel="icon" type="image/x-icon" href="fc.png">
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -81,18 +81,50 @@
     .light-mode .sidebar a:hover {
       color: #2e4057;
     }
-  </style>
+</style>
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Quick Links</h2>
-        <a href="index.html">Home</a>
-        <a href="ec.html">EaglerCraft</a>
-        <a href="geng.html">General Games</a>
-        --------------------
-        <a href="about.html">About</a>
+
+  <div class="sidebar">
+    <h2>Quick Links</h2>
+    <a href="index.html">Home</a>
+    <a href="ec.html">EaglerCraft</a>
+    <a href="geng.html">General Games</a>
+    <a href="hfgam.html">Helpful Games</a>
+    --------------------
+    <a href="about.html">About</a>
+</div>
+
+<div class="main-content">
+    <!-- Icon-based Theme Toggle Button -->
+    <button class="mode-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+
+    <h1>About page</h1>
+    <div class="game-list">
+      <div class="left-aligned">
+        <h2>What is this website all about?</h2>
+        <h3>Coming soon</h3>
+
       </div>
-<div class="game-list">
-    <div class="left-aligned">    
-        <p id="helpful">Helpful Games</p>
-        <a href="Ruffle/Ruffle.html">Flash Player <b>(Slow)</b></a>
+    </div>
+  </div>
+
+  <script>
+    const toggleButton = document.getElementById('themeToggle');
+    const body = document.body;
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+      body.classList.add('light-mode');
+      toggleButton.textContent = '🌞';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('light-mode');
+      const isLight = body.classList.contains('light-mode');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      toggleButton.textContent = isLight ? '🌞' : '🌙';
+    });
+  </script>
+</body>
+</html>
