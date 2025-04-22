@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+#grad {
+  background-image: linear-gradient(to bottom right, red, yellow);
+}
+
 /* Animated Background - Dark Mode */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

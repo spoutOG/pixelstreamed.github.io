@@ -82,47 +82,15 @@
   </style>
 </head>
 <body>
-
-  <div class="sidebar">
-    <h2>Quick Links</h2>
-    <a href="index.html">Home</a>
-    <a href="ec.html">EaglerCraft</a>
-    <a href="geng.html">General Games</a>
-    <a href="hfgam.html">Helpful Games</a>
-  </div>
-
-  <div class="main-content">
-    <!-- Icon-based Theme Toggle Button -->
-    <button class="mode-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
-
-    <h1>Welcome to My Games Hub!</h1>
-    <div class="game-list">
-      <div class="left-aligned">
-        <h2>What games do we aim to add/do?</h2>
-        <h3>"Gams" from City Realm and upgrading the CSS/HTML files. We also broke light mode 😬</h3>
-        <h2>Changelog</h2>
-        <h3><b>NEW!</b> sidebar for navigating pages instead of buttons all at homepage.
-        Also got around to adding a gradient backround.</h3>
+    <div class="sidebar">
+        <h2>Quick Links</h2>
+        <a href="index.html">Home</a>
+        <a href="ec.html">EaglerCraft</a>
+        <a href="hfgam.html">Helpful Games</a>
       </div>
-    </div>
-  </div>
-
-  <script>
-    const toggleButton = document.getElementById('themeToggle');
-    const body = document.body;
-
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-      body.classList.add('light-mode');
-      toggleButton.textContent = '🌞';
-    }
-
-    toggleButton.addEventListener('click', () => {
-      body.classList.toggle('light-mode');
-      const isLight = body.classList.contains('light-mode');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
-      toggleButton.textContent = isLight ? '🌞' : '🌙';
-    });
-  </script>
-</body>
-</html>
+<div class="game-list">
+    <div class="left-aligned">    
+        <p id="general-games">General Games</p>
+        <a href="Games/Slope.html">Play Slope <b>(Working on HTML)</b></a>
+        <a href="Games/Main (1)/index.html">Play Cookie Clicker (this can take a while to load)</a>
+        <a href="Games/1.4.4b/index.html"><b>OvO Game</b></a>
