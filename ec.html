@@ -15,6 +15,12 @@
       padding: 0;
       display: flex;
       font-family: 'Poppins', sans-serif;
+      transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for theme change */
+    }
+    
+    body.dark-mode {
+      background-image: linear-gradient(#2c3e50, #34495e); /* Darker background */
+      color: #ecf0f1; /* Lighter text */
     }
 
     .sidebar {
@@ -27,12 +33,21 @@
       height: 100vh;
       overflow-y: auto;
       box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for theme change */
+    }
+    .sidebar.dark-mode {
+      background-color: #2c3e50; /* Darker sidebar */
+      color: #ecf0f1;
     }
 
     .sidebar h2 {
       font-size: 20px;
       margin-bottom: 10px;
       color: #2e4057;
+      transition: color 0.5s ease; /* Smooth transition for theme change */
+    }
+    .sidebar.dark-mode h2{
+       color: #ecf0f1;
     }
 
     .sidebar a {
@@ -46,22 +61,48 @@
     .sidebar a:hover {
       color: #2e4057;
     }
+    .sidebar.dark-mode a {
+      color: #95a5a6;
+    }
+     .sidebar.dark-mode a:hover {
+      color: #ecf0f1;
+    }
 
     .main-content {
       margin-left: 240px;
       padding: 40px 20px;
       flex-grow: 1;
       text-align: center;
+      transition: color 0.5s ease; /* Smooth transition for theme change */
+    }
+    .main-content.dark-mode{
+       color: #ecf0f1;
     }
 
     .mode-toggle {
-      position: absolute;
-      top: 10px;
-      right: 10px;
+      position: fixed; /* Changed to fixed */
+      bottom: 20px;    /* Added bottom positioning */
+      right: 20px;     /* Added right positioning */
       background: none;
       border: none;
       font-size: 24px;
       cursor: pointer;
+      color: #2e4057;
+      transition: color 0.5s ease;
+      width: 40px; /* Make it square */
+      height: 40px;
+      border-radius: 50%; /* Make it a circle */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mode-toggle:hover {
+        transform: scale(1.1);
+    }
+
+    .mode-toggle.dark-mode {
+      color: #ecf0f1;
     }
 
     .light-mode {
@@ -83,6 +124,9 @@
     }
   </style>
 </head>
+<div class="main-content">
+  <!-- Icon-based Theme Toggle Button -->
+  <button class="mode-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
 <body>
     <div class="sidebar">
         <h2>Quick Links</h2>
@@ -107,3 +151,29 @@
 <h3><b>1.12 Server Link:</b> wss://organic-pancake-v6wgr64wpgqv2qj4-8081.app.github.dev/</h3>
 <h4>Directions: Open any of the 1.12 Files above. Go to multiplayer > Add server > (click) Server address, then CRTL+V to paste link.</h4>
 <h3><i>1.8 Server is no longer maintained</i></h3>
+
+<script>
+  const toggleButton = document.getElementById('themeToggle');
+  const body = document.body;
+  const sidebar = document.querySelector('.sidebar');
+  const mainContent = document.querySelector('.main-content');
+
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    body.classList.add('dark-mode');
+    sidebar.classList.add('dark-mode');
+    mainContent.classList.add('dark-mode');
+    toggleButton.classList.add('dark-mode');
+    toggleButton.textContent = '🌞';
+  }
+
+  toggleButton.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    sidebar.classList.toggle('dark-mode');
+    mainContent.classList.toggle('dark-mode');
+    toggleButton.classList.toggle('dark-mode');
+    const isDarkMode = body.classList.contains('dark-mode');
+    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    toggleButton.textContent = isDarkMode ? '🌞' : '🌙';
+  });
+</script>
