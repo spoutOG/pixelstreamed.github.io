@@ -9,7 +9,7 @@
 - Slope
 - OvO
 ## What version are we in right now?
-# 1.3.1 
+# 1.4 
 
 ## Links
 https://spoutog.github.io/pixelstreamed.github.io/

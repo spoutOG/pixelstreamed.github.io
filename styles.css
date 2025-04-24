@@ -116,9 +116,9 @@ h3 {
 .game-list a:nth-child(n+4) { animation-delay: 0.6s; }
 
 .game-list a:hover {
-  background-color: #7294db;
+  background-color: #2e2e2e;
   transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 6px 10px rgba(255, 255, 255, 0.4);
 }
 
 /* Toggle Button */
@@ -217,4 +217,3 @@ h3 {
         transform: translateY(0);
       }
     }
-}
