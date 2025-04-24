@@ -111,9 +111,9 @@ h3 {
   animation: fadeInUp 0.6s ease forwards;
 }
 
-.game-list a:nth-child(n+2) { animation-delay: 0.2s; }
-.game-list a:nth-child(n+3) { animation-delay: 0.4s; }
-.game-list a:nth-child(n+4) { animation-delay: 0.6s; }
+.game-list a:nth-child(n+2) { animation-delay: 0.4s; }
+.game-list a:nth-child(n+3) { animation-delay: 0.8s; }
+.game-list a:nth-child(n+4) { animation-delay: 0.16s; }
 
 .game-list a:hover {
   background-color: #2e2e2e;
