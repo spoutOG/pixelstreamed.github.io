@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Games - General </title>
+  <title>Games</title>
   <link rel="icon" type="image/x-icon" href="Images/fc.png">
   <link rel="stylesheet" href="styles.css" />
   <style>
@@ -121,55 +121,61 @@
     .light-mode .sidebar a:hover {
       color: #2e4057;
     }
-  </style>
+</style>
 </head>
 <body>
-    <div class="sidebar">
-        <h2>Navigation</h2>
-        <a href="index.html">Home</a>
-        <a href="ec.html">EaglerCraft</a>
-        <a href="hfgam.html">Helpful Games</a>
-        <a href="about.html">About</a>
-        <a href="news.html">Site News</a>
-      </div>
 
-      <div class="main-content">
-        <button class="mode-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+  <div class="sidebar">
+    <h2>Navigation</h2>
+    <a href="index.html">Home</a>
+    <a href="ec.html">EaglerCraft</a>
+    <a href="geng.html">General Games</a>
+    <a href="hfgam.html">Helpful Games</a>
+    <a href="about.html">About</a>
+    <a href="news.html">Site News</a>
+  </div>
 
-<div class="game-list">
-    <div class="left-aligned">    
-        <p id="general-games">General Games</p>
-        <a href="Games/Slope.html">Play Slope <b>(Working on HTML)</b></a>
-        <a href="Games/Main (1)/index.html">Play Cookie Clicker (this can take a while to load)</a>
-        <a href="Games/1.4.4b/index.html"><b>OvO Game</b></a>
-        <p>Download Links</p>
-        <a href="https://drive.google.com/file/d/1v5SXsd9PQF0GBvYg7LfyadeM4ZdxOb98/view?usp=sharing">Download Slope</a>
-        <a href="placeholders.html">Downlaod OvO</a>
-      </div>
+  <div class="main-content">
+    <button class="mode-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+
+    <h1>News hub</h1>
+    <div class="game-list">
+      <div class="left-aligned">
+        <h2>Main News</h2>
+        <h3>Just to say, this isint a changelog. 
+            This is whats been happening inside of the website, 
+            just so you can imagine what I do to keep this site live. <b>News:</b>
+            Dont you just love one line of CSS code making everything dyfunctional?
+            <i><u>More news is coming soon</u></i>
+            </h3>
+    </div>
     </div>
   </div>
-        <script>
-          const toggleButton = document.getElementById('themeToggle');
-          const body = document.body;
-          const sidebar = document.querySelector('.sidebar');
-          const mainContent = document.querySelector('.main-content');
-      
-          const savedTheme = localStorage.getItem('theme');
-          if (savedTheme === 'dark') {
-            body.classList.add('dark-mode');
-            sidebar.classList.add('dark-mode');
-            mainContent.classList.add('dark-mode');
-            toggleButton.classList.add('dark-mode');
-            toggleButton.textContent = '🌞';
-          }
-      
-          toggleButton.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            sidebar.classList.toggle('dark-mode');
-            mainContent.classList.toggle('dark-mode');
-            toggleButton.classList.toggle('dark-mode');
-            const isDarkMode = body.classList.contains('dark-mode');
-            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-            toggleButton.textContent = isDarkMode ? '🌞' : '🌙';
-          });
-        </script>
+
+  <script>
+    const toggleButton = document.getElementById('themeToggle');
+    const body = document.body;
+    const sidebar = document.querySelector('.sidebar');
+    const mainContent = document.querySelector('.main-content');
+
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      body.classList.add('dark-mode');
+      sidebar.classList.add('dark-mode');
+      mainContent.classList.add('dark-mode');
+      toggleButton.classList.add('dark-mode');
+      toggleButton.textContent = '🌞';
+    }
+
+    toggleButton.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      sidebar.classList.toggle('dark-mode');
+      mainContent.classList.toggle('dark-mode');
+      toggleButton.classList.toggle('dark-mode');
+      const isDarkMode = body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+      toggleButton.textContent = isDarkMode ? '🌞' : '🌙';
+    });
+  </script>
+</body>
+</html>
